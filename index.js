@@ -133,13 +133,8 @@ const updateStats = (countryName, message, sendMsg) => {
         let bgColor = hsl(Math.random() * 360, 35, 32);
 
 
-        textToImage.generate(`——— ${countryName.toUpperCase().replace(/-/g, " ")} ———\n
-                            • Ukupno zaraženih: ${zarazenih}\n
-                            • Trenutno zaraženih: ${trenutno}\n
-                            • Broj preminulih: ${smrti}\n
-                            • Broj oporavljenih: ${oporavljeni}\n
-                            • Novo zaraženih: ${novoZarazenih}\n
-                            • Novo preminulih: ${novoUmrlih}`,
+
+        textToImage.generate(`——— ${countryName.toUpperCase().replace(/-/g, " ")} ———\n• Ukupno zaraženih: ${zarazenih}\n• Trenutno zaraženih: ${trenutno}\n• Broj preminulih: ${smrti}\n• Broj oporavljenih: ${oporavljeni}\n• Novo zaraženih: ${novoZarazenih}\n• Novo preminulih: ${novoUmrlih}`,
             {
                 debug: true,
                 debugFilename: "generated.png",
@@ -155,7 +150,7 @@ const updateStats = (countryName, message, sendMsg) => {
                 flagReg.lastIndex = 0;
                 regNew.lastIndex = 0;
 
-                //if (sendMsg) { sendUpdateMessage(message, dataUri); }
+                if (sendMsg) { sendUpdateMessage(message, dataUri); }
             });
 
 
