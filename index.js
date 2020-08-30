@@ -100,18 +100,9 @@ bot.on("message", message => {
 })
 
 const sendUpdateMessage = (message) => {
-    /*fs.readdir("./", (err, files) => {
-        let images = files.filter(file => file.endsWith(".png")).reverse();
-        message.channel.send({
-            files: [{ attachment: `./${images[images.length - 1]}`, name: 'image.png' }]
-        })
-    });*/
-
     message.channel.send({
         files: [{ attachment: `./generated.png`, name: 'image.png' }]
     })
-
-
 }
 
 const updateStats = (countryName, message, sendMsg) => {
