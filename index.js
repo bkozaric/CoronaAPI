@@ -9,8 +9,6 @@ require("dotenv/config")
 
 const token = process.env.TOKEN;
 
-console.log(token);
-
 let rawdata = fs.readFileSync('data.json');
 let defaultCountryRaw = fs.readFileSync('country.json');
 
@@ -39,8 +37,6 @@ function separatori(broj) {
 
 bot.on("ready", () => {
     bot.user.setActivity("ca!help");
-
-    console.log(token)
 
     setInterval(async function () {
         console.log("Updating stats...");
