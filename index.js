@@ -5,7 +5,7 @@ const fs = require("fs");
 const textToImage = require('text-to-image');
 const hsl = require('hsl-to-hex')
 
-const token = "NzA4Nzc3MzM3MjczMDU3MzUx.XrcS2g.j9OrlfAZLiZUxDmexYEFNC8UR2g";
+const token = process.env.TOKEN;
 
 let rawdata = fs.readFileSync('data.json');
 let defaultCountryRaw = fs.readFileSync('country.json');
