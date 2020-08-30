@@ -5,7 +5,11 @@ const fs = require("fs");
 const textToImage = require('text-to-image');
 const hsl = require('hsl-to-hex')
 
+require("dotenv/config")
+
 const token = process.env.TOKEN;
+
+console.log(token);
 
 let rawdata = fs.readFileSync('data.json');
 let defaultCountryRaw = fs.readFileSync('country.json');
@@ -32,8 +36,11 @@ function separatori(broj) {
     return broj.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+
 bot.on("ready", () => {
     bot.user.setActivity("ca!help");
+
+    console.log(token)
 
     setInterval(async function () {
         console.log("Updating stats...");
@@ -164,3 +171,4 @@ const updateStats = (countryName, message, sendMsg) => {
 }
 
 bot.login(token);
+
