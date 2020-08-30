@@ -132,34 +132,31 @@ const updateStats = (countryName, message, sendMsg) => {
 
         let bgColor = hsl(Math.random() * 360, 35, 32);
 
-        //console.log(bgColor);
-        console.log(body);
-        Clipboard.
 
-            textToImage.generate(`——— ${countryName.toUpperCase().replace(/-/g, " ")} ———\n
+        textToImage.generate(`——— ${countryName.toUpperCase().replace(/-/g, " ")} ———\n
                             • Ukupno zaraženih: ${zarazenih}\n
                             • Trenutno zaraženih: ${trenutno}\n
                             • Broj preminulih: ${smrti}\n
                             • Broj oporavljenih: ${oporavljeni}\n
                             • Novo zaraženih: ${novoZarazenih}\n
                             • Novo preminulih: ${novoUmrlih}`,
-                {
-                    debug: true,
-                    debugFilename: "generated.png",
-                    maxWidth: 320,
-                    fontSize: 18,
-                    fontFamily: 'Arial',
-                    lineHeight: 30,
-                    margin: 5,
-                    bgColor: bgColor,
-                    textColor: "white"
-                }).then(function (dataUri) {
-                    reg.lastIndex = 0;
-                    flagReg.lastIndex = 0;
-                    regNew.lastIndex = 0;
+            {
+                debug: true,
+                debugFilename: "generated.png",
+                maxWidth: 320,
+                fontSize: 18,
+                fontFamily: 'Arial',
+                lineHeight: 30,
+                margin: 5,
+                bgColor: bgColor,
+                textColor: "white"
+            }).then(function (dataUri) {
+                reg.lastIndex = 0;
+                flagReg.lastIndex = 0;
+                regNew.lastIndex = 0;
 
-                    //if (sendMsg) { sendUpdateMessage(message, dataUri); }
-                });
+                //if (sendMsg) { sendUpdateMessage(message, dataUri); }
+            });
 
 
 
